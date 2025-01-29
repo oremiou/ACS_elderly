@@ -53,12 +53,20 @@ all.sampsHRFE=data.frame(HR=all.sampsFE[,1])
 
 ### create a plot for the posterior
 cutoff=1
+library(dplyr)
 hist.y <- density(all.sampsHRFE$HR, from = 0.8, to = 1.6) %$% 
   data.frame(x = x, y = y) %>% 
   mutate(area = x >= cutoff)
 
-mean(all.sampsHRFE$HR>1)
+mean(all.sampsHRFE$HR<1)
+mean(all.sampsHRFE$HR<0.975)
+mean(all.sampsHRFE$HR<0.95)
+mean(all.sampsHRFE$HR<0.90)
 
+mean(all.sampsHRFE$HR>1)
+mean(all.sampsHRFE$HR>1.025)
+mean(all.sampsHRFE$HR>1.05)
+mean(all.sampsHRFE$HR>1.10)
 
 hist.y$area2="Control better"
 hist.y$area2[hist.y$area==F]="Active better"

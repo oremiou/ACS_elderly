@@ -162,7 +162,16 @@ hist.y <- density(all.sampsHRRE$HR, from = 0.6, to = 1.4) %$%
   data.frame(x = x, y = y) %>% 
   mutate(area = x >= cutoff)
 
+mean(all.sampsHRRE$HR<1)
+mean(all.sampsHRRE$HR<0.975)
+mean(all.sampsHRRE$HR<0.95)
+mean(all.sampsHRRE$HR<0.90)
+
 mean(all.sampsHRRE$HR>1)
+mean(all.sampsHRRE$HR>1.025)
+mean(all.sampsHRRE$HR>1.05)
+mean(all.sampsHRRE$HR>1.10)
+
 
 hist.y$area2="Control better"
 hist.y$area2[hist.y$area==F]="Active better"
