@@ -1,4 +1,0 @@
-- the data required to run all analyses are available in the folder /data
-- in the folder /code there are scripts in R for running all analyses
-- the file stemi.Rproj can be used to run the analyses within as an RStudio project
-- the file Analysis report.docx presents details on the models and detailed results from all analyses
