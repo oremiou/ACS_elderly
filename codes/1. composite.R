@@ -1,6 +1,6 @@
 # load and clean data ---------------------------------------------------------------
 library(rio)
-d0=import("data/STEMI_data.xlsx")
+d0=import("data/ACS_data.xlsx")
 d1=d0[d0$Outcome=="comp_allcausemortality_mi",]
 d2=d1[, c("Study", "year", "hr", "lci", "uci")]
 d2=d2[complete.cases(d2),]
